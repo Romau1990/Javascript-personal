@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="scripts.js" defer></script>
+    <title>Juego de compras medieval</title>
+</head>
+
+<body>
+
+
+
+    <div class="page-wrapper">
+
+
+        <!--primera instancia del juego, elegir el tipo de cofre-->
+        <div class="game-title">
+            <h1>Elige sabiamente el tipo de cofre</h1>
+        </div>
+        <div id="carouselExample" class="carousel slide">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="display-item">
+                        <div class="item-info">
+                            <h2>Cofre común</h2>
+                            <div>chances de conseguir:</div>
+                            <div class="drop-items">
+                                <img src="https://placehold.co/70x70" alt="">
+                                <img src="https://placehold.co/70x70" alt="">
+                                <img src="https://placehold.co/70x70" alt="">
+                            </div>
+                            <div class="item-price">
+                                <img src="/proyecto_objectGenerator/images/icons/gold-bars.png" width="40" alt=""><span
+                                    class="price">500</span>
+                            </div>
+                            <button class="buy-randomItem-button">buy items</button>
+                            <!--info dinamica-->
+                        </div>
+                        <img src="/proyecto_objectGenerator/images/cofre2-removebg-preview.png" class="item-img"
+                            alt="...">
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="display-item">
+                        <div class="item-info">
+                            <h2>Cofre de plata</h2>
+                            <p>chances de conseguir:</p>
+                            <div class="drop-items">
+                                <img src="https://placehold.co/70x70" alt="">
+                                <img src="https://placehold.co/70x70" alt="">
+                                <img src="https://placehold.co/70x70" alt="">
+                            </div>
+                            <div class="item-price">
+                                <img src="/proyecto_objectGenerator/images/icons/gold-bars.png" width="40" alt=""><span
+                                    class="price">500</span>
+                            </div>
+                            <button class="buy-randomItem-button">buy items</button>
+                            <!--info dinamica-->
+                        </div>
+                        <img src="/proyecto_objectGenerator/images/sc-removebg-preview.png"
+                            class="item-img silver-chest" alt="...">
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="display-item">
+                        <div class="item-info">
+                            <h2>Cofre dorado</h2>
+                            <p>chances de conseguir:</p>
+                            <div class="drop-items">
+                                <img src="https://placehold.co/70x70" alt="">
+                                <img src="https://placehold.co/70x70" alt="">
+                                <img src="https://placehold.co/70x70" alt="">
+                            </div>
+                            <div class="item-price">
+                                <img src="/proyecto_objectGenerator/images/icons/gold-bars.png" width="40" alt=""><span
+                                    class="price">500</span>
+                            </div>
+                            <button class="buy-randomItem-button">buy items</button>
+                            <!--info dinamica-->
+                        </div>
+                        <div class="drop-items"></div>
+                        <img src="/proyecto_objectGenerator/images/gc2-removebg-preview.png"
+                            class="item-img golden-chest" alt="...">
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+
+
+
+        <!--esto no se ve desde el inicio.. se mostrará luego de presionar el botón comprar-->
+        <template class="items-slide-container">
+            <div class="item-display">
+                <img class="chest-open" src="/proyecto_objectGenerator/images/open-chest-removebg-preview.webp" alt="">
+                <!--imagen cofre abierto-->
+                <div class="items-acquired">
+                    <img src="/proyecto_objectGenerator/images/weapons/Group 3.png" alt="">
+                    <img src="/proyecto_objectGenerator/images/weapons/Group 3.png" alt="">
+                    <img src="/proyecto_objectGenerator/images/weapons/Group 3.png" alt="">
+                </div>
+                <button class="resume-button"><img src="" alt="">aceptar botín</button>
+            </div>
+        </template>
+
+        <!--Botón de comprar-->
+        <section class="buttons-container">
+            <button class="check-stash">check my stash</button>
+            <button class="battle-button">get money fighting</button>
+        </section>
+
+        <!--sección donde el jugador puede ver rápidamente cuanto dinero tiene y otras opciones-->
+        <section class="player-info-container">
+            <div class="player-gold"><img src="/proyecto_objectGenerator/images/icons/gold-bars.png" width="30px"
+                    alt=""><span class="gold-number">1000</span></div>
+            <div class="player-turn">turno: <span class="turn-number">105</span></div>
+        </section>
+
+        <!--stash UI- aparece cuando hago click en check-stash-->
+        <section class="stash-container">
+            <div class="stash"></div>
+            <div class="stash-items-stats"></div>
+            <div class="equipment">
+                <div class="helmet-socket"></div>
+                <div class="gloves-socket"></div>
+                <div class="boots-socket"></div>
+                <div class="armor-socket"></div>
+                <div class="amulet-socket"></div>
+                <div class="leftRing-socket"></div>
+                <div class="rightRing-socket"></div>
+                <div class="leftWeapon-socket"></div>
+                <div class="rightWeapon-socket"></div>
+                <div class="others-socket"></div>
+            </div>
+            <!--crear los items dinamicamente con su botón de scrap, vender, ver stats o equipar-->
+        </section>
+
+        <!--veo todos los items equipados o equipo los items. Aparece cuando hago click en check-stash-->
+
+    </div>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
+
+<!--
+button de comprar cofre a un precio x
+div que muestre lo que compre con slide
+dentro del producto imagen, stats, botón de destruir para obtener chatarra, vender el objeto con el precio que yo elija, o conservar.
+Si lo conservo lo puedo usar para entrar en combate
+boton de entrar en combate
+enemigo random
+
+-->
